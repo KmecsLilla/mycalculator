@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e00e9d02-e789-4b9b-9e5e-c4573f7e0163" activeEnvironment="Default" name="mycalculator" resourceRoot="${projectDir}" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="83eedd60-de7e-4f79-965e-69133072cb1b" wsaVersion="NONE" name="CalculatorSoapBinding" type="wsdl" bindingName="{http://kmecslilla.hu}CalculatorSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/prog/eclipseworkspace/WebServiceProject/WebContent/wsdl/Calculator.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\prog\eclipseworkspace\WebServiceProject\WebContent\wsdl\Calculator.wsdl"><con:part><con:url>file:\D:\prog\eclipseworkspace\WebServiceProject\WebContent\wsdl\Calculator.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://kmecslilla.hu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://kmecslilla.hu" xmlns:intf="http://kmecslilla.hu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://kmecslilla.hu" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="add">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="addResponse">
+        <complexType>
+          <sequence>
+            <element name="addReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="divide">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="divideResponse">
+        <complexType>
+          <sequence>
+            <element name="divideReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="multiply">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="multiplyResponse">
+        <complexType>
+          <sequence>
+            <element name="multiplyReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subtract">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subtractResponse">
+        <complexType>
+          <sequence>
+            <element name="subtractReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="addRequest">
+    <wsdl:part element="impl:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtractResponse">
+    <wsdl:part element="impl:subtractResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="impl:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplyResponse">
+    <wsdl:part element="impl:multiplyResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplyRequest">
+    <wsdl:part element="impl:multiply" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divideRequest">
+    <wsdl:part element="impl:divide" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divideResponse">
+    <wsdl:part element="impl:divideResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtractRequest">
+    <wsdl:part element="impl:subtract" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="add">
+      <wsdl:input message="impl:addRequest" name="addRequest"></wsdl:input>
+      <wsdl:output message="impl:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="divide">
+      <wsdl:input message="impl:divideRequest" name="divideRequest"></wsdl:input>
+      <wsdl:output message="impl:divideResponse" name="divideResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiply">
+      <wsdl:input message="impl:multiplyRequest" name="multiplyRequest"></wsdl:input>
+      <wsdl:output message="impl:multiplyResponse" name="multiplyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtract">
+      <wsdl:input message="impl:subtractRequest" name="subtractRequest"></wsdl:input>
+      <wsdl:output message="impl:subtractResponse" name="subtractResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoapBinding" type="impl:Calculator">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="divide">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="divideRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="divideResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiply">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="multiplyRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="multiplyResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtract">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="subtractRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subtractResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port binding="impl:CalculatorSoapBinding" name="Calculator">
+      <wsdlsoap:address location="http://localhost:8080/WebServiceProject/services/Calculator"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint></con:endpoints><con:operation id="5012df11-8b4b-4da5-a4f6-4b288adb24b9" isOneWay="false" action="" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="addRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="91ecfa89-cc64-454b-b224-f862cd177955" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:add>\r
+         <kmec:a>3</kmec:a>\r
+         <kmec:b>-8</kmec:b>\r
+      </kmec:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/addRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1665cfd4-e258-4626-a2b6-a6e9d0542a1e" isOneWay="false" action="" name="divide" bindingOperationName="divide" type="Request-Response" outputName="divideResponse" inputName="divideRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d6bf83e8-688a-46c0-97c4-ad1128eda5db" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:divide>\r
+         <kmec:a>10</kmec:a>\r
+         <kmec:b>0</kmec:b>\r
+      </kmec:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/divideRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e0a6e29c-0f0f-41b6-90a2-32b572520910" isOneWay="false" action="" name="multiply" bindingOperationName="multiply" type="Request-Response" outputName="multiplyResponse" inputName="multiplyRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="654bdd46-7e81-423b-a90f-6bbb420b48f8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:multiply>\r
+         <kmec:a>-4</kmec:a>\r
+         <kmec:b>-8</kmec:b>\r
+      </kmec:multiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/multiplyRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ba97015d-dc4f-4859-a85b-dd4b5c6e1071" isOneWay="false" action="" name="subtract" bindingOperationName="subtract" type="Request-Response" outputName="subtractResponse" inputName="subtractRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="484275d3-eb54-4bc9-85f5-2f2a70506c62" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:subtract>\r
+         <kmec:a>-8</kmec:a>\r
+         <kmec:b>0</kmec:b>\r
+      </kmec:subtract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/subtractRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="6dc67913-e077-4add-828d-891b6ba54f78" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="8ce6ab2a-043b-4e27-8eed-bab281ff27e3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="e759a3dd-3f77-44a4-8173-b28249de583e" name="add - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>add</con:operation><con:request name="add - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="084ac81e-0385-443c-b42c-30019a6e2d01"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:add>\r
+         <kmec:a>3</kmec:a>\r
+         <kmec:b>7</kmec:b>\r
+      </kmec:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5d537742-b0b8-4ddb-adc0-04e594b1295e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/addRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="2beb2e63-64a2-44bd-9fda-0ac7262927e9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:settings/><con:testStep type="request" id="1906f192-99d0-417e-b5a1-35c05d97fa5c" name="add - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>add</con:operation><con:request name="add - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c22b4e47-2131-4081-b44a-90be736d5f11"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:add>\r
+         <kmec:a>3</kmec:a>\r
+         <kmec:b>-8</kmec:b>\r
+      </kmec:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="a953e746-f214-4ae7-96e7-7aec75de224b" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/addRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1e713d03-e875-4ac7-854a-361c404314e3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true"><con:settings/><con:testStep type="request" id="a1a93111-15a6-44ba-8242-4835921ffff8" name="add - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>add</con:operation><con:request name="add - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="53b5125f-5f72-42b1-a738-0f6502c277ed"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:add>\r
+         <kmec:a>3</kmec:a>\r
+         <kmec:b>-8</kmec:b>\r
+      </kmec:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="b0c3e746-f3d0-4c9a-8a52-2ee2fa08f9c6" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/addRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="63351665-80ae-4af9-8a1e-2590c8272d09" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true"><con:settings/><con:testStep type="request" id="a407e40c-c82b-42da-9e99-f7422a159b5a" name="subtract - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>subtract</con:operation><con:request name="subtract - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="90befae0-1f86-47e4-866f-76dddef0dc23"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:subtract>\r
+         <kmec:a>-8</kmec:a>\r
+         <kmec:b>-5</kmec:b>\r
+      </kmec:subtract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f6a90536-4872-463a-bb4a-8dac8772bf29" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/subtractRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="883b7920-5c4e-4b4c-be59-838fdb0d0df5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 5" searchProperties="true"><con:settings/><con:testStep type="request" id="e18edfc6-6e4d-466e-8673-e0163bd52a44" name="subtract - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>subtract</con:operation><con:request name="subtract - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c439c41f-a641-40d4-8bf4-596b143ab481"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:subtract>\r
+         <kmec:a>0</kmec:a>\r
+         <kmec:b>-5</kmec:b>\r
+      </kmec:subtract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2d566e4d-f9c1-4ba7-858d-bcfa73190512" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/subtractRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d34d5d6e-58a7-48fe-813b-d145000869b0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 6" searchProperties="true"><con:settings/><con:testStep type="request" id="138eb54e-4c0e-4a66-81f9-2e4b9fbb7dba" name="multiply - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>multiply</con:operation><con:request name="multiply - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e8f52666-e9b1-446a-947d-c6e2fee747eb"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:multiply>\r
+         <kmec:a>4</kmec:a>\r
+         <kmec:b>7</kmec:b>\r
+      </kmec:multiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="9cdd783b-9508-4436-a98b-3616d0b997f6" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/multiplyRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="dc490203-ca79-475c-a9a5-b1d8ad31412d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 7" searchProperties="true"><con:settings/><con:testStep type="request" id="040dd99a-0230-48b7-801b-57ce23562713" name="multiply - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>multiply</con:operation><con:request name="multiply - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="145a6c49-43fd-4f4d-ac05-7c31abf91db4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:multiply>\r
+         <kmec:a>4</kmec:a>\r
+         <kmec:b>-7</kmec:b>\r
+      </kmec:multiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7acc5f30-f001-47cf-a6e4-3fdbe40b26e6" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/multiplyRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5108a8ab-c856-4292-8462-4dd518e2aa46" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 8" searchProperties="true"><con:settings/><con:testStep type="request" id="63b49ee6-0f44-4877-9388-4d31fd4f5723" name="multiply - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>multiply</con:operation><con:request name="multiply - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="3f4b56dc-a334-4abb-9a41-cfdd8bacdd86"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:multiply>\r
+         <kmec:a>4</kmec:a>\r
+         <kmec:b>0</kmec:b>\r
+      </kmec:multiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7edd4e86-1753-480d-94a5-fd81eb89b14a" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/multiplyRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="2d96d320-af14-43f4-998b-444c7c659b01" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 9" searchProperties="true"><con:settings/><con:testStep type="request" id="5452ae86-7d51-42c1-bc7e-f081f027ebf1" name="multiply - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>multiply</con:operation><con:request name="multiply - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="fafe6430-380a-4521-9fc1-bf013f01bd4d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:multiply>\r
+         <kmec:a>-4</kmec:a>\r
+         <kmec:b>-8</kmec:b>\r
+      </kmec:multiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="330281e9-63ea-4c2f-9cf1-4143fecd3fed" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/multiplyRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6ef58032-c21a-423c-befd-5e8cc51c88be" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 10" searchProperties="true"><con:settings/><con:testStep type="request" id="1e59dabe-1b16-4b04-99d9-4a11a6c415ea" name="divide - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>divide</con:operation><con:request name="divide - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="34330578-7d1c-4de9-b436-ac51ecc553b0"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:divide>\r
+         <kmec:a>22</kmec:a>\r
+         <kmec:b>3</kmec:b>\r
+      </kmec:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d94ecd4c-a9af-4f97-b5c8-5604d5b8c565" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/divideRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8d7148c2-4714-4b6d-a835-46e9a4fea772" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 11" searchProperties="true"><con:settings/><con:testStep type="request" id="84b4bb33-d380-435f-9ca2-e2f5b3d59b81" name="divide - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>divide</con:operation><con:request name="divide - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="64eb982e-4542-447c-b579-3423ae20497d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:divide>\r
+         <kmec:a>22</kmec:a>\r
+         <kmec:b>-5</kmec:b>\r
+      </kmec:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2106e980-da94-44ee-bdb3-d3cdd6d316bc" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/divideRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e918fa49-0f6b-4524-aeed-1b54ce6a43f2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 12" searchProperties="true"><con:settings/><con:testStep type="request" id="a8f8552a-a48d-4c03-b580-56bdcfccc359" name="divide - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>divide</con:operation><con:request name="divide - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5980b0d7-60c5-46a3-81da-f33055890edd"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:divide>\r
+         <kmec:a>0</kmec:a>\r
+         <kmec:b>9</kmec:b>\r
+      </kmec:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="bc06a5c3-6135-43bf-be9b-d272fcf71fae" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/divideRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cc24e703-8ef6-4128-9607-9bc3eef64a3f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 13" searchProperties="true"><con:settings/><con:testStep type="request" id="9273b966-6c35-4042-87c5-a5cdaae4faa9" name="divide - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>divide</con:operation><con:request name="divide - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="7701d107-d198-42f2-84aa-d884f4d7ee08"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/WebServiceProject/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kmec="http://kmecslilla.hu">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <kmec:divide>\r
+         <kmec:a>10</kmec:a>\r
+         <kmec:b>0</kmec:b>\r
+      </kmec:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="ac49f5f5-3bf8-4130-8deb-0f63033cf565" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kmecslilla.hu/Calculator/divideRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
