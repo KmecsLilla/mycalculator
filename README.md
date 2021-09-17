@@ -1,3 +1,3 @@
-# Számológép program
+# Calculator program
 
-Ez egy olyan számológép alkalmazás, melyben a négy alapműveletet webszolgáltatáson keresztül érjük el.
+This is a Calculator application in which the 4 arithmetic operations are accessible via web service.
