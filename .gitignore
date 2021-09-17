@@ -1,0 +1,12 @@
+.metadata
+helloworld
+Servers
+mycalculator/.settings
+mycalculator/.classpath
+mycalculator/.project
+mycalculator/target
+
+WebServiceProject/.settings
+WebServiceProject/.classpath
+WebServiceProject/.project
+WebServiceProject/build
